@@ -257,6 +257,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                       Gestione dello stato e interazioni utente in ottica UX moderna
                    </p>
+                   <button class="read-more-btn">Scopri di più</button>
 
                   <div class="project-tech">
                      <span>API</span>
@@ -291,6 +292,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                        Questo progetto rappresenta per me un passaggio importante: mi ha permesso di apprendere rapidamente un nuovo framework grazie alle basi solide di frontend già sviluppate, dimostrando la mia capacità di adattamento e apprendimento continuo.
                     </p>
+                    <button class="read-more-btn">Scopri di più</button>
 
                     <div class="project-tech">
                         <span>Angular</span>
@@ -326,6 +328,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                     L’applicazione è supportata da un backend sviluppato in Node.js ed Express per la gestione delle richieste e l’integrazione dei servizi. Il progetto è stato containerizzato con Docker per facilitare il deploy e la gestione degli ambienti.
                    </p>
+                   <button class="read-more-btn">Scopri di più</button>
 
                   <div class="project-tech">
                      <span>Node.js</span>
@@ -351,7 +354,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                     <h3>SITO ORATORIO SAN VINCENZO</h3>
 
                   <p>
-                     Progetto sviluppato in team con un collega al termine di un corso intensivo di 6 mesi presso Develhope.
+                     Progetto sviluppato in team con un colleague al termine di un corso intensivo di 6 mesi presso Develhope.
                      Abbiamo realizzato un sito web moderno e responsive utilizzando React, JavaScript, HTML5 e TailwindCSS, progettato per offrire un’esperienza utente semplice, intuitiva e accessibile.
 
                      L’obiettivo del progetto era creare un sito rappresentativo capace di raccontare la storia, le attività e i successi della squadra, offrendo un punto di riferimento online per tifosi e membri della comunità.
@@ -362,6 +365,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                      Il progetto è stato infine pubblicato online tramite Netlify.
                  </p>
+                 <button class="read-more-btn">Scopri di più</button>
 
                     <div class="project-tech">
                         <span>React</span>
@@ -399,6 +403,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                        È stata inoltre integrata la gestione dei file tramite Multer, permettendo il caricamento sicuro di documenti come carta d’identità e libretto del veicolo.
                    </p>
+                   <button class="read-more-btn">Scopri di più</button>
 
                   <div class="project-tech">
                      <span>Node.js</span>
@@ -426,13 +431,14 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <!-- PROJECT 6 -->
 
                  <div class="project">
-                    <img src="images/saputoassicurazioni.png" alt="React App Preview" />
+                    <img src="images/stayfit.png" alt="React App Preview" />
 
                     <h3>STAYFIT APP</h3>
 
                     <p>
                       ultimo progetto presentato nel mio corso in develhope che riassumeva tutti gli argomenti trattati durante i 6 mesi di corso, con l’obiettivo di realizzare un’applicazione full stack completa. Ho sviluppato una piattaforma dedicata al fitness, dove gli utenti possono registrarsi, creare un profilo, accedere a programmi di allenamento personalizzati e monitorare i propri progressi. Il backend è stato realizzato con Node.js ed Express.js, utilizzando MySQL per la gestione dei dati e implementando funzionalità di autenticazione tramite JWT. Il frontend è stato sviluppato con React e TailwindCSS, creando un’interfaccia moderna e user-friendly. Questo progetto rappresenta una sintesi delle competenze acquisite durante il corso, dimostrando la mia capacità di progettare e sviluppare un’applicazione web completa, con particolare attenzione alla sicurezza, alla scalabilità e all’esperienza utente.
                    </p>
+                   <button class="read-more-btn">Scopri di più</button>
 
                   <div class="project-tech">
                      <span>Node.js</span>
@@ -456,9 +462,8 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                     </div>
                 </div>
 
-
-
             </div>
+
         </section>
 
         <!-- GALLERIA IMMAGINI (Carousel) -->
@@ -644,7 +649,20 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
             container.addEventListener("mouseleave", startAutoScroll);
 
             startAutoScroll();
+
+            // Read More Logic
+            document.querySelectorAll(".read-more-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const description = btn.previousElementSibling;
+                    description.classList.toggle("expanded");
+                    
+                    if (description.classList.contains("expanded")) {
+                        btn.innerHTML = 'Mostra meno';
+                    } else {
+                        btn.innerHTML = 'Scopri di più';
+                    }
+                });
+            });
         </script>
     </body>
 </html>
-

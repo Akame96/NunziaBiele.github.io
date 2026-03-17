@@ -266,6 +266,89 @@ overflow: hidden;
 
 .project:hover{ transform:translateY(-5px); border-color:#58a6ff; }
 
+.project p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #8b949e;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project p.expanded {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #58a6ff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.project-tech span {
+    background: rgba(88, 166, 255, 0.1);
+    color: #58a6ff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.project-tech span:hover {
+    background: rgba(88, 166, 255, 0.2);
+    border-color: #58a6ff;
+    transform: translateY(-2px);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #30363d;
+    padding-top: 15px;
+}
+
+.project-links a {
+    color: #e6edf3;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    color: #58a6ff;
+}
+
 /* CONTACT GRID */
 .contact-cards-grid {
     display: grid;
