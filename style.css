@@ -372,9 +372,8 @@ border:3px solid #58a6ff;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 
 }
 
@@ -390,6 +389,14 @@ border:1px solid #30363d;
 
 transition:.3s;
 
+display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.project p {
+  flex-grow: 1;
 }
 
 /* IMMAGINE PROGETTO */
@@ -491,6 +498,15 @@ text-decoration:none;
 
 color:#58a6ff;
 
+}
+
+.contact-links {
+  margin-bottom: 40px;
+}
+
+#contact {
+  text-align: center;
+  padding: 80px 20px;
 }
 
 /* FOOTER */
