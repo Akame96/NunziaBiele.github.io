@@ -205,8 +205,17 @@ flex-wrap: wrap;
 }
 
 /* SKILLS */
+#skills {
+    text-align: center;
+}
+
 .skills-group { margin-bottom: 30px; }
-.skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+.skills-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    justify-content: center;
+}
 .skill {
   display: flex;
   align-items: center;
