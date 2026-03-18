@@ -336,6 +336,12 @@ overflow: hidden;
     border-radius: 8px;
     margin-bottom: 15px;
     border: 1px solid #30363d;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.02);
 }
 
 .project:hover{ transform:translateY(-5px); border-color:#58a6ff; }
@@ -656,8 +662,77 @@ footer{ text-align:center; padding:40px; border-top:1px solid #30363d; color:#8b
 /* Lightbox */
 #lightbox {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9); display: none;
+  background: rgba(0,0,0,0.92); display: none;
   justify-content: center; align-items: center; z-index: 2000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
 }
-#lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
-#close { position: absolute; top: 20px; right: 20px; font-size: 40px; color: white; cursor: pointer; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#lightbox img, #lightbox video { 
+    max-width: 90%; 
+    max-height: 80%; 
+    border-radius: 8px; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+#close { 
+    position: absolute; 
+    top: 20px; 
+    right: 30px; 
+    font-size: 50px; 
+    color: #e6edf3; 
+    cursor: pointer; 
+    transition: 0.3s;
+    user-select: none;
+}
+
+#close:hover {
+    color: #58a6ff;
+    transform: scale(1.1);
+}
+
+/* Indicatore Video sui Progetti */
+.project-img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #30363d;
+    height: 200px;
+    cursor: pointer;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+    border: none;
+    transition: transform 0.5s ease;
+}
+
+.project-img-container:hover img {
+    transform: scale(1.05);
+}
+
+.video-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(88, 166, 255, 0.9);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}

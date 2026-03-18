@@ -236,7 +236,9 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                  <!-- PROJECT 1 -->
 
                  <div class="project">
-                    <img src="images/storelocator.png" alt="React App Preview" />
+                    <div class="project-img-container">
+                        <img src="images/storelocator.png" alt="React App Preview" />
+                    </div>
 
                     <h3>STORE LOCATOR</h3>
 
@@ -279,7 +281,9 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <!-- PROJECT 2 -->
 
                 <div class="project">
-                    <img src="images/pokedex.png" alt="React App Preview" />
+                    <div class="project-img-container">
+                        <img src="images/pokedex.png" alt="React App Preview" />
+                    </div>
 
                     <h3>POKEDEX ANGULAR</h3>
 
@@ -316,7 +320,10 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <!-- PROJECT 3 -->
 
                  <div class="project">
-                    <img src="images/waPiu.png" alt="React App Preview" />
+                    <div class="project-img-container">
+                        <img src="images/waPiu.png" alt="React App Preview" data-video="video/waPiu.mp4" />
+                        <div class="video-badge"><i class="fas fa-play"></i></div>
+                    </div>
 
                     <h3>WAPIÙ</h3>
 
@@ -348,7 +355,9 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <!-- PROJECT 4 -->
 
                 <div class="project">
-                    <img src="images/oratoriosanvincenzo.png" alt="Oratorio San Vincnzo Preview" />
+                    <div class="project-img-container">
+                        <img src="images/oratoriosanvincenzo.png" alt="Oratorio San Vincnzo Preview" />
+                    </div>
 
                     <h3>SITO ORATORIO SAN VINCENZO</h3>
 
@@ -386,7 +395,9 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
 
                 <!-- PROJECT 5 -->
                 <div class="project">
-                    <img src="images/saputoassicurazioni.png" alt="React App Preview" />
+                    <div class="project-img-container">
+                        <img src="images/saputoassicurazioni.png" alt="React App Preview" />
+                    </div>
 
                     <h3>LANDING-PAGE SAPUTO ASSICURAZIONI</h3>
 
@@ -428,7 +439,10 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <!-- PROJECT 6 -->
 
                  <div class="project">
-                    <img src="images/stayfit.png" alt="React App Preview" />
+                    <div class="project-img-container">
+                        <img src="images/stayfit.png" alt="React App Preview" data-video="video/stayfit.mp4" />
+                        <div class="video-badge"><i class="fas fa-play"></i></div>
+                    </div>
 
                     <h3>STAYFIT APP</h3>
 
@@ -504,20 +518,14 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
         <!-- Overlay fullscreen -->
         <div id="lightbox">
             <span id="close">&times;</span>
-            <img id="lightbox-img" />
+            <img id="lightbox-img" style="display: none;" />
+            <video id="lightbox-video" controls style="display: none;"></video>
         </div>
 
         <!-- CONTACT -->
 
         <section id="contact">
             <h2>&lt; Contatti /&gt;</h2>
-
-            <p class="contact-description">
-                Sono alla ricerca di nuove opportunità professionali come
-                <b>Frontend o Full Stack Developer</b>. Se cerchi una
-                persona motivata, con tanta voglia di imparare e di
-                portare valore al tuo team, non esitare a contattarmi!
-            </p>
 
             <div class="contact-cards-grid">
                 <!-- Curriculum Card -->
@@ -594,25 +602,69 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 new Date().getFullYear();
 
             // Lightbox logic
-            const carouselItems = document.querySelectorAll(".carousel-item img");
             const lightbox = document.getElementById("lightbox");
             const lightboxImg = document.getElementById("lightbox-img");
+            const lightboxVideo = document.getElementById("lightbox-video");
             const closeBtn = document.getElementById("close");
 
-            carouselItems.forEach((img) => {
-                img.addEventListener("click", () => {
-                    lightbox.style.display = "flex";
-                    lightboxImg.src = img.src;
+            const openLightbox = (src, isVideo = false) => {
+                lightbox.style.display = "flex";
+                if (isVideo) {
+                    lightboxImg.style.display = "none";
+                    lightboxVideo.style.display = "block";
+                    lightboxVideo.src = src;
+                    lightboxVideo.play();
+                } else {
+                    lightboxVideo.style.display = "none";
+                    lightboxVideo.pause();
+                    lightboxImg.style.display = "block";
+                    lightboxImg.src = src;
+                }
+            };
+
+            const closeLightbox = () => {
+                lightbox.style.display = "none";
+                lightboxVideo.pause();
+                lightboxVideo.src = "";
+                lightboxImg.src = "";
+            };
+
+            // Carousel images
+            document.querySelectorAll(".carousel-item img").forEach((img) => {
+                img.style.cursor = "pointer";
+                img.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    openLightbox(img.src);
                 });
             });
 
-            closeBtn.addEventListener("click", () => {
-                lightbox.style.display = "none";
+            // Project previews
+            document.querySelectorAll(".project-img-container").forEach((container) => {
+                const img = container.querySelector("img");
+                if (!img) return;
+
+                container.addEventListener("click", () => {
+                    const videoSrc = img.getAttribute("data-video");
+                    if (videoSrc) {
+                        openLightbox(videoSrc, true);
+                    } else {
+                        openLightbox(img.src);
+                    }
+                });
             });
 
+            closeBtn.addEventListener("click", closeLightbox);
+
             lightbox.addEventListener("click", (e) => {
-                if (e.target !== lightboxImg) {
-                    lightbox.style.display = "none";
+                if (e.target === lightbox || e.target === closeBtn) {
+                    closeLightbox();
+                }
+            });
+
+            // Chiudi con ESC
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    closeLightbox();
                 }
             });
 
@@ -727,7 +779,6 @@ function typeComingSoon() {
         csIndex++;
         setTimeout(typeComingSoon, 70);
     } else {
-        // 👇 aggiunge le icone SOLO alla fine
         comingSoonText.innerHTML += icons;
         isAnimating = false;
     }
@@ -746,5 +797,6 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(document.querySelector(".projects-coming-soon"));
         </script>
+
     </body>
 </html>
