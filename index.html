@@ -25,13 +25,15 @@
         <!-- NAVBAR -->
 
         <nav class="navbar">
-            <h2 class="logo">&lt;/&gt; Nunzia</h2>
+            <a href="#hero" class="logo-link" style="text-decoration: none; color: inherit;">
+                <h2 class="logo">&lt;/&gt;&nbsp;Nunzia</h2>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#about">Chi sono</a></li>
                 <li><a href="#skills">Competenze</a></li>
                 <li><a href="#projects">Progetti</a></li>
-                <li><a href="#education">Formazione</a></li>
+                <li><a href="#carousel">Immagini</a></li>
                 <li><a href="#contact">Contatti</a></li>
             </ul>
 
@@ -42,31 +44,50 @@
 
         <!-- HERO -->
 
-        <header class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="bracket-left">&lt;</span>
+        <header class="hero" id="hero">
+            <div class="hero-grid">
+                <!-- FOTO + SIMBOLO -->
 
-                    <span class="name">Nunzia Biele</span>
+                <div class="hero-visual">
+                    <div class="code-box">
+                        <img src="images/nunzia.png" alt="Nunzia Biele" />
+                    </div>
+                </div>
 
-                    <span class="bracket-right">/&gt;</span>
-                </h1>
+                <!-- TESTO -->
 
-                <div class="terminal">
-                    <p>
-                        <span class="prompt">></span> Frontend / Full Stack
-                        Developer
-                    </p>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Ciao, sono <span class="name">Nunzia</span>
+                    </h1>
 
-                    <p>
-                        <span class="prompt">></span> React | TypeScript |
-                        Node.js
-                    </p>
+                    <h2 class="hero-subtitle">
+                        Frontend / Full Stack Developer
+                    </h2>
 
-                    <p class="typing">
-                        <span class="prompt">></span> Building modern web
-                        applications...
-                    </p>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">bash — nunzia@dev</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">nunzia@portfolio:~$</span> <span class="typing-text"></span><span class="cursor">|</span></p>
+                        </div>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a
+                            href="Nunzia_Biele_CV.pdf"
+                            download
+                            class="hero-btn primary">
+                            <i class="fas fa-download"></i> Scarica CV
+                        </a>
+                        <a href="#contact" class="hero-btn secondary">
+                            <i class="fas fa-envelope"></i> Contattami
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -79,24 +100,29 @@
             <div class="about-container">
                 <div class="about-text">
                     <p>
-                        Frontend / Full Stack Developer con una forte passione
-                        per la tecnologia e lo sviluppo web moderno.
+                       Frontend / Full Stack Developer con una forte passione per la tecnologia e lo sviluppo web moderno.
                     </p>
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            Vedo il web non solo come tecnologia, ma come uno spazio creativo in cui idee, funzionalità e identità possono prendere forma. Mi piace costruire applicazioni che non siano solo performanti, ma anche curate nei dettagli e capaci di offrire un’esperienza chiara e coinvolgente.
+          </p>
+
+          <p>
+       Lavoro principalmente con React, TypeScript e Node.js, stack con cui sviluppo interfacce moderne e applicazioni scalabili. Grazie a questa base, ho approfondito anche Angular, realizzando in autonomia un progetto dedicato al mondo Pokémon. L’esperienza con React mi ha permesso di comprendere più rapidamente le logiche di Angular, rendendo il passaggio tra i due framework naturale e stimolante.
+          </p>
 
                     <p>
-                        Lavoro principalmente con React, TypeScript e Node.js
-                        per creare applicazioni web moderne e performanti.
+                        Le mie passioni influenzano profondamente il mio modo di sviluppare. Anime, manga e videogiochi mi hanno insegnato l’importanza della cura dei dettagli, della coerenza e della costruzione di esperienze immersive. In particolare, opere come Attack on Titan e Naruto rappresentano per me esempi di identità, evoluzione e profondità narrativa.
                     </p>
+          <p>
+           Allo stesso tempo, la natura e gli animali mi portano a ricercare equilibrio e semplicità, mentre arte e musica alimentano la mia creatività e il senso estetico nei progetti.
+          </p>
 
                     <p>
-                        Mi appassionano il problem solving, la progettazione di
-                        interfacce intuitive e la creazione di esperienze
-                        digitali ben strutturate.
-                    </p>
-                </div>
 
-                <div class="about-image">
-                    <img src="images/nunzia.png" alt="Nunzia Biele" />
+Mi appassionano il problem solving, la progettazione di interfacce intuitive e la creazione di esperienze digitali ben strutturate, dove logica e creatività si incontrano per dare vita a qualcosa di significativo.
+                    </p>
                 </div>
             </div>
         </section>
@@ -106,179 +132,445 @@
         <section id="skills">
             <h2>&lt; Tech Stack /&gt;</h2>
 
-            <div class="skills-container">
-                <div class="skill">
-                    <i class="devicon-javascript-plain colored"></i>
-                    <span>JavaScript</span>
+            <div class="skills-group">
+                <h3>Linguaggi</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="devicon-javascript-plain colored"></i
+                        ><span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-typescript-plain colored"></i
+                        ><span>TypeScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-python-plain colored"></i
+                        ><span>Python</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-php-plain colored"></i
+                        ><span>PHP</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-html5-plain colored"></i
+                        ><span>HTML</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-css3-plain colored"></i
+                        ><span>CSS</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="skill">
-                    <i class="devicon-typescript-plain colored"></i>
-                    <span>TypeScript</span>
+            <div class="skills-group">
+                <h3>Frontend Framework</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="devicon-react-original colored"></i
+                        ><span>React</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-vuejs-plain colored"></i
+                        ><span>Vue</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-angularjs-plain colored"></i
+                        ><span>Angular</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-nextjs-plain"></i>
+                        <span>NextJS</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="skill">
-                    <i class="devicon-react-original colored"></i>
-                    <span>React</span>
+            <div class="skills-group">
+                <h3>Backend</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="devicon-nodejs-plain colored"></i
+                        ><span>NodeJS</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-laravel-plain colored"></i
+                        ><span>Laravel</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="skill">
-                    <i class="devicon-vuejs-plain colored"></i>
-                    <span>Vue</span>
+            <div class="skills-group">
+                <h3>Database</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="devicon-postgresql-plain colored"></i
+                        ><span>PostgreSQL</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-mysql-plain colored"></i
+                        ><span>MySQL</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="skill">
-                    <i class="devicon-angularjs-plain colored"></i>
-                    <span>Angular</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-nodejs-plain colored"></i>
-                    <span>NodeJS</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-nextjs-original"></i>
-                    <span>NextJS</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-php-plain colored"></i>
-                    <span>PHP</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-laravel-plain colored"></i>
-                    <span>Laravel</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-python-plain colored"></i>
-                    <span>Python</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-html5-plain colored"></i>
-                    <span>HTML</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-css3-plain colored"></i>
-                    <span>CSS</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-docker-plain colored"></i>
-                    <span>Docker</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-git-plain colored"></i>
-                    <span>Git</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-postgresql-plain colored"></i>
-                    <span>PostgreSQL</span>
-                </div>
-
-                <div class="skill">
-                    <i class="devicon-mysql-plain colored"></i>
-                    <span>MySQL</span>
+            <div class="skills-group">
+                <h3>Tools & DevOps</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="devicon-docker-plain colored"></i
+                        ><span>Docker</span>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-git-plain colored"></i
+                        ><span>Git</span>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- PROJECTS -->
 
         <section id="projects">
             <h2>&lt; Projects /&gt;</h2>
 
             <div class="projects-container">
-                <div class="project">
-                    <h3>Portfolio Website</h3>
+
+                 <!-- PROJECT 1 -->
+
+                 <div class="project">
+                    <img src="images/storelocator.png" alt="React App Preview" />
+
+                    <h3>STORE LOCATOR</h3>
 
                     <p>
-                        Portfolio personale sviluppato con HTML, CSS e
-                        JavaScript.
-                    </p>
+                      Applicazione web sviluppata durante il mio ultimo periodo in Volantinopiù per la visualizzazione e gestione di punti vendita su mappa interattiva.
 
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                      Sviluppo di un’interfaccia frontend responsive per la ricerca e visualizzazione dei negozi
+
+                      Integrazione di API per il recupero dinamico dei dati dei punti vendita
+
+                      Implementazione di una mappa interattiva con marker geolocalizzati e clustering
+
+                      Realizzazione di schede negozio con informazioni dettagliate e stato di apertura
+
+                      Integrazione di funzionalità di contatto rapido tramite WhatsApp
+
+                      Filtri per distanza (km) e ricerca per città o nome negozio
+
+                      Gestione dello stato e interazioni utente in ottica UX moderna
+                   </p>
+                   <button class="read-more-btn">Scopri di più</button>
+
+                  <div class="project-tech">
+                     <span>NextJS</span>
+                     <span>React</span>
+                     <span>TailwindCSS</span>
+                     <span>Docker</span>
+                     <span>TypeScript</span>
+                     <span>Google Maps</span>
+                 </div>                     
+
+                    <div class="project-links">
+                       <a href="" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
                     </div>
-
-                    <a href="https://github.com/Akame96" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
                 </div>
 
-                <div class="project">
-                    <h3>React Web App</h3>
 
-                    <p>Applicazione web sviluppata con React e API REST.</p>
+                <!-- PROJECT 2 -->
+
+                <div class="project">
+                    <img src="images/pokedex.png" alt="React App Preview" />
+
+                    <h3>POKEDEX ANGULAR</h3>
+
+                    <p>Ho realizzato questo progetto in autonomia con l’obiettivo di approfondire Angular e comprenderne a fondo il funzionamento attraverso un approccio pratico.
+
+                       Per rendere l’apprendimento più stimolante, ho deciso di unire lo studio del framework alla mia passione per il mondo Pokémon, sviluppando una Pokédex interattiva.
+
+                       L’applicazione si basa sull’utilizzo di una API pubblica dedicata ai Pokémon, che mi ha permesso di gestire chiamate HTTP, organizzare i dati e costruire un’interfaccia dinamica e reattiva. Durante lo sviluppo ho lavorato su componenti, servizi, routing e gestione dello stato, consolidando competenze già acquisite in React e adattandole all’ecosistema Angular.
+
+                       Questo progetto rappresenta per me un passaggio importante: mi ha permesso di apprendere rapidamente un nuovo framework grazie alle basi solide di frontend già sviluppate, dimostrando la mia capacità di adattamento e apprendimento continuo.
+                    </p>
+                    <button class="read-more-btn">Scopri di più</button>
+
+                    <div class="project-tech">
+                        <span>Angular</span>
+                        <span>TypeScript</span>
+                        <span>TailwindCSS</span>
+                        <span>REST API</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/Akame96/pokedex-angular"
+                            target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+
+                        <a href="https://pokedexpoket.netlify.app/pokemon" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+
+                 <div class="project">
+                    <img src="images/waPiu.png" alt="React App Preview" />
+
+                    <h3>WAPIÙ</h3>
+
+                    <p>
+                    Landing page sviluppata durante il mio percorso in stage presso Volantinopiù, progettata per la promozione di un servizio di marketing su WhatsApp.
+
+                    Ho realizzato un’interfaccia moderna e responsive utilizzando React e TailwindCSS, curando l’esperienza utente e la struttura dei contenuti per una comunicazione chiara e orientata alla conversione.
+
+                    L’applicazione è supportata da un backend sviluppato in Node.js ed Express per la gestione delle richieste e l’integrazione dei servizi. Il progetto è stato containerizzato con Docker per facilitare il deploy e la gestione degli ambienti.
+                   </p>
+                   <button class="read-more-btn">Scopri di più</button>
+
+                  <div class="project-tech">
+                     <span>NodeJS</span>
+                     <span>ExpressJS</span>
+                     <span>MySQL</span>
+                     <span>React</span>
+                     <span>TailwindCSS</span>
+                     <span>Docker</span>
+                 </div>                     
+
+                    <div class="project-links">
+
+                        <a href="" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 -->
+
+                <div class="project">
+                    <img src="images/oratoriosanvincenzo.png" alt="Oratorio San Vincnzo Preview" />
+
+                    <h3>SITO ORATORIO SAN VINCENZO</h3>
+
+                  <p>
+                     Progetto sviluppato in team con un colleague al termine di un corso intensivo di 6 mesi presso Develhope.
+                     Abbiamo realizzato un sito web moderno e responsive utilizzando React, JavaScript, HTML5 e TailwindCSS, progettato per offrire un’esperienza utente semplice, intuitiva e accessibile.
+
+                     L’obiettivo del progetto era creare un sito rappresentativo capace di raccontare la storia, le attività e i successi della squadra, offrendo un punto di riferimento online per tifosi e membri della comunità.
+
+                     Il sito è stato sviluppato seguendo un approccio mobile first, garantendo un’esperienza fluida e ottimizzata su smartphone e tablet, senza compromettere la qualità su desktop.
+
+                     Durante lo sviluppo abbiamo lavorato sulla progettazione dell’interfaccia, sulla struttura delle pagine e sull’organizzazione dei contenuti, integrando anche widget esterni (TuttoCampo.it) per fornire dati aggiornati e informazioni rilevanti.
+
+                     Il progetto è stato infine pubblicato online tramite Netlify.
+                 </p>
+                 <button class="read-more-btn">Scopri di più</button>
 
                     <div class="project-tech">
                         <span>React</span>
-                        <span>API</span>
+                        <span>JavaScript</span>
+                        <span>TailwindCSS</span>
+                        <span>Netlify</span>
                     </div>
 
-                    <a href="https://github.com/Akame96" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <div class="project-links">
+                        <a href="https://github.com/Maurilio93/Progetto-oratorio" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+
+                        <a href="https://oratorio-san-vincenzo.netlify.app/" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5 -->
+                <div class="project">
+                    <img src="images/saputoassicurazioni.png" alt="React App Preview" />
+
+                    <h3>LANDING-PAGE SAPUTO ASSICURAZIONI</h3>
+
+                    <p>
+                       Progetto sviluppato in team con un collega al termine di un corso intensivo di 6 mesi presso Develhope.
+                       Abbiamo realizzato un sistema backend strutturato per la gestione delle richieste di preventivo, progettato per essere sicuro, veloce e facilmente utilizzabile dagli operatori.
+
+                       L’obiettivo del progetto era creare un’infrastruttura in grado di ricevere, archiviare e gestire i dati in modo efficiente, garantendo al tempo stesso un alto livello di protezione delle informazioni sensibili.
+
+                       Il backend è stato sviluppato utilizzando Node.js ed Express.js per la creazione di API REST, con un database MySQL per la gestione dei dati, testato tramite DBeaver. Per il testing delle API abbiamo utilizzato Postman.
+
+                       Particolare attenzione è stata dedicata alla sicurezza: abbiamo implementato autenticazione tramite JWT per proteggere le rotte sensibili, utilizzato query parametrizzate per prevenire SQL injection e migliorato la gestione degli errori per rendere il sistema più stabile e affidabile.
+
+                       È stata inoltre integrata la gestione dei file tramite Multer, permettendo il caricamento sicuro di documenti come carta d’identità e libretto del veicolo.
+                   </p>
+                   <button class="read-more-btn">Scopri di più</button>
+
+                  <div class="project-tech">
+                     <span>NodeJS</span>
+                     <span>ExpressJS</span>
+                     <span>MySQL</span>
+                     <span>JWT</span>
+                     <span>REST API</span>
+                 </div>                     
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/Maurilio93/progettoassicurazioni"
+                            target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+
+                        <a href="https://saputoassicurazioni.netlify.app/" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 6 -->
+
+                 <div class="project">
+                    <img src="images/stayfit.png" alt="React App Preview" />
+
+                    <h3>STAYFIT APP</h3>
+
+                    <p>
+                      ultimo progetto presentato nel mio corso in develhope che riassumeva tutti gli argomenti trattati durante i 6 mesi di corso, con l’obiettivo di realizzare un’applicazione full stack completa. Ho sviluppato una piattaforma dedicata al fitness, dove gli utenti possono registrarsi, creare un profilo, accedere a programmi di allenamento personalizzati e monitorare i propri progressi. Il backend è stato realizzato con Node.js ed Express.js, utilizzando MySQL per la gestione dei dati e implementando funzionalità di autenticazione tramite JWT. Il frontend è stato sviluppato con React e TailwindCSS, creando un’interfaccia moderna e user-friendly. Questo progetto rappresenta una sintesi delle competenze acquisite durante il corso, dimostrando la mia capacità di progettare e sviluppare un’applicazione web completa, con particolare attenzione alla sicurezza, alla scalabilità e all’esperienza utente.
+                   </p>
+                   <button class="read-more-btn">Scopri di più</button>
+
+                  <div class="project-tech">
+                     <span>NodeJS</span>
+                     <span>ExpressJS</span>
+                     <span>MySQL</span>
+                     <span>React</span>
+                     <span>TailwindCSS</span>
+                 </div>                     
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/develhope/FS28-Team2-Project4"
+                            target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+
+                        <a href="https://stayfitnb.netlify.app/" target="_blank">
+                            <i class="fas fa-globe"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="projects-coming-soon">
+                <div class="terminal-mini">
+                    <span class="prompt">$</span> <span id="coming-soon-text"></span><span class="cursor-mini">_</span>
                 </div>
             </div>
+
         </section>
 
-        <!-- EDUCATION -->
+        <!-- GALLERIA IMMAGINI (Carousel) -->
 
-        <section id="education">
-            <h2>&lt; Formazione /&gt;</h2>
+        <section id="carousel">
+            <h2>&lt; Gallery /&gt;</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-nav prev" aria-label="Precedente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
 
-            <div class="card">
-                <h3>Full Stack Developer</h3>
+                <div class="carousel-container">
+                    <div class="carousel-item">
+                        <img src="images/manga.jpeg" alt="Manga" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/art.jpeg" alt="Arte" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/waPiu.png" alt="Work" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/loungebar.png" alt="Design" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pokedex.png" alt="Gaming" />
+                    </div>
+                </div>
 
-                <p><strong>Develhope — 2024</strong></p>
-
-                <p>
-                    Programma intensivo di sviluppo Fullstack con HTML, CSS,
-                    JavaScript, TypeScript, React, Node.js e Git.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Istituto Magistrale Statale G. Guacci</h3>
-
-                <p><strong>Socio Psico Pedagogico</strong></p>
-
-                <p>Benevento — 2009 / 2014</p>
+                <button class="carousel-nav next" aria-label="Successiva">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
+
+        <!-- Overlay fullscreen -->
+        <div id="lightbox">
+            <span id="close">&times;</span>
+            <img id="lightbox-img" />
+        </div>
 
         <!-- CONTACT -->
 
         <section id="contact">
             <h2>&lt; Contatti /&gt;</h2>
 
-            <div class="contact-links">
-                <a href="mailto:nunzia.biele@virgilio.it">
-                    <i class="fas fa-envelope"></i> Email
+            <p class="contact-description">
+                Sono alla ricerca di nuove opportunità professionali come
+                <b>Frontend o Full Stack Developer</b>. Se cerchi una
+                persona motivata, con tanta voglia di imparare e di
+                portare valore al tuo team, non esitare a contattarmi!
+            </p>
+
+            <div class="contact-cards-grid">
+                <!-- Curriculum Card -->
+                <a
+                    href="Nunzia_Biele_CV.pdf"
+                    download
+                    class="contact-card cv-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Il mio CV</span>
+                    <small>Scarica in PDF</small>
+                </a>
+
+                <a href="mailto:nunzia.biele@virgilio.it" class="contact-card email-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <small>nunzia.biele@virgilio.it</small>
+                </a>
+
+                <a
+                    href="https://wa.me/393408903913"
+                    target="_blank"
+                    class="contact-card whatsapp-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                    <small>Chat diretta</small>
+                </a>
+
+                <a href="tel:+393408903913" class="contact-card phone-card">
+                    <i class="fas fa-phone"></i>
+                    <span>Telefono</span>
+                    <small>+39 340 890 3913</small>
                 </a>
 
                 <a
                     href="https://www.linkedin.com/in/nunzia-biele/"
-                    target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                    target="_blank"
+                    class="contact-card linkedin-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                    <small>in/nunzia-biele</small>
                 </a>
 
-                <a href="https://github.com/Akame96" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
+                <a
+                    href="https://github.com/Akame96"
+                    target="_blank"
+                    class="contact-card github-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <small>Akame96</small>
                 </a>
             </div>
         </section>
-
-        <!-- FOOTER -->
 
         <footer>
             <p>© <span id="year"></span> Nunzia Biele</p>
@@ -292,8 +584,168 @@
                 nav.classList.toggle("active");
             });
 
+            // Chiudi il menu quando si clicca su un link (per mobile)
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("active");
+                });
+            });
+
             document.getElementById("year").textContent =
                 new Date().getFullYear();
+
+            // Lightbox logic
+            const carouselItems = document.querySelectorAll(".carousel-item img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("close");
+
+            carouselItems.forEach((img) => {
+                img.addEventListener("click", () => {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = img.src;
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.style.display = "none";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target !== lightboxImg) {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            // Carousel Logic
+            const container = document.querySelector(".carousel-container");
+            const nextBtn = document.querySelector(".carousel-nav.next");
+            const prevBtn = document.querySelector(".carousel-nav.prev");
+            let scrollInterval;
+
+            const startAutoScroll = () => {
+                scrollInterval = setInterval(() => {
+                    const maxScroll = container.scrollWidth - container.clientWidth;
+                    if (container.scrollLeft >= maxScroll - 5) {
+                        container.scrollTo({ left: 0, behavior: "smooth" });
+                    } else {
+                        container.scrollBy({ left: 300, behavior: "smooth" });
+                    }
+                }, 3000);
+            };
+
+            const stopAutoScroll = () => clearInterval(scrollInterval);
+
+            nextBtn.addEventListener("click", () => {
+                container.scrollBy({ left: 300, behavior: "smooth" });
+                stopAutoScroll();
+                startAutoScroll();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                container.scrollBy({ left: -300, behavior: "smooth" });
+                stopAutoScroll();
+                startAutoScroll();
+            });
+
+            container.addEventListener("mouseenter", stopAutoScroll);
+            container.addEventListener("mouseleave", startAutoScroll);
+
+            startAutoScroll();
+
+            // Read More Logic
+            document.querySelectorAll(".read-more-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const description = btn.previousElementSibling;
+                    description.classList.toggle("expanded");
+                    
+                    if (description.classList.contains("expanded")) {
+                        btn.innerHTML = 'Mostra meno';
+                    } else {
+                        btn.innerHTML = 'Scopri di più';
+                    }
+                });
+            });
+
+            // Terminal Typing Animation
+            const terminalText = document.querySelector(".typing-text");
+            const phrases = [
+                "React | Angular | TypeScript | Node.js",
+                "Codice, design e passione per il web...",
+                "npm install success --global",
+                "Sviluppo interfacce moderne e scalabili."
+            ];
+            
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    terminalText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    terminalText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    typingSpeed = 2000; // Pausa alla fine della frase
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typingSpeed = 500;
+                }
+
+                setTimeout(type, typingSpeed);
+            }
+
+            // Avvia l'animazione dopo un breve ritardo
+            setTimeout(type, 1000);
+
+            // "Coming Soon" Typing Animation with Scroll Trigger
+            const comingSoonText = document.getElementById("coming-soon-text");
+
+const textOnly = "altri progetti in arrivo stay tuned..";
+const icons = `
+    <i class="fa-solid fa-rocket"></i>
+    <i class="fa-solid fa-code"></i>
+    <i class="fa-solid fa-mug-hot"></i>
+`;
+
+let csIndex = 0;
+let isAnimating = false;
+
+function typeComingSoon() {
+    if (csIndex < textOnly.length) {
+        comingSoonText.textContent += textOnly.charAt(csIndex);
+        csIndex++;
+        setTimeout(typeComingSoon, 70);
+    } else {
+        // 👇 aggiunge le icone SOLO alla fine
+        comingSoonText.innerHTML += icons;
+        isAnimating = false;
+    }
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !isAnimating) {
+            comingSoonText.textContent = "";
+            csIndex = 0;
+            isAnimating = true;
+            typeComingSoon();
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector(".projects-coming-soon"));
         </script>
     </body>
 </html>
