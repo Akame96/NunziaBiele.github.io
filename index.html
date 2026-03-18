@@ -58,7 +58,7 @@
 
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Ciao, sono <span class="name">Nunzia</span>.
+                        Ciao, sono <span class="name">Nunzia</span>
                     </h1>
 
                     <h2 class="hero-subtitle">
@@ -66,15 +66,15 @@
                     </h2>
 
                     <div class="terminal">
-                        <p>
-                            <span class="prompt">></span> React | Angular |
-                            TypeScript | Node.js
-                        </p>
-
-                        <p class="typing">
-                            <span class="prompt">></span> Codice, design e
-                            passione per il web...
-                        </p>
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">bash — nunzia@dev</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">nunzia@portfolio:~$</span> <span class="typing-text"></span><span class="cursor">|</span></p>
+                        </div>
                     </div>
 
                     <div class="hero-ctas">
@@ -420,7 +420,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                             <i class="fab fa-github"></i> GitHub
                         </a>
 
-                        <a href="" target="_blank">
+                        <a href="https://saputoassicurazioni.netlify.app/" target="_blank">
                             <i class="fas fa-globe"></i> Live Demo
                         </a>
                     </div>
@@ -453,12 +453,18 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                             <i class="fab fa-github"></i> GitHub
                         </a>
 
-                        <a href="" target="_blank">
+                        <a href="https://stayfitnb.netlify.app/" target="_blank">
                             <i class="fas fa-globe"></i> Live Demo
                         </a>
                     </div>
                 </div>
 
+            </div>
+
+            <div class="projects-coming-soon">
+                <div class="terminal-mini">
+                    <span class="prompt">$</span> <span id="coming-soon-text"></span><span class="cursor-mini">_</span>
+                </div>
             </div>
 
         </section>
@@ -525,7 +531,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                     <small>Scarica in PDF</small>
                 </a>
 
-                <a href="mailto:nunzia.biele@virgilio.it" class="contact-card">
+                <a href="mailto:nunzia.biele@virgilio.it" class="contact-card email-card">
                     <i class="fas fa-envelope"></i>
                     <span>Email</span>
                     <small>nunzia.biele@virgilio.it</small>
@@ -534,13 +540,13 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <a
                     href="https://wa.me/393408903913"
                     target="_blank"
-                    class="contact-card whatsapp">
+                    class="contact-card whatsapp-card">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                     <small>Chat diretta</small>
                 </a>
 
-                <a href="tel:+393408903913" class="contact-card">
+                <a href="tel:+393408903913" class="contact-card phone-card">
                     <i class="fas fa-phone"></i>
                     <span>Telefono</span>
                     <small>+39 340 890 3913</small>
@@ -549,7 +555,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <a
                     href="https://www.linkedin.com/in/nunzia-biele/"
                     target="_blank"
-                    class="contact-card">
+                    class="contact-card linkedin-card">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                     <small>in/nunzia-biele</small>
@@ -558,7 +564,7 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                 <a
                     href="https://github.com/Akame96"
                     target="_blank"
-                    class="contact-card">
+                    class="contact-card github-card">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                     <small>Akame96</small>
@@ -660,6 +666,86 @@ Mi appassionano il problem solving, la progettazione di interfacce intuitive e l
                     }
                 });
             });
+
+            // Terminal Typing Animation
+            const terminalText = document.querySelector(".typing-text");
+            const phrases = [
+                "React | Angular | TypeScript | Node.js",
+                "Codice, design e passione per il web...",
+                "npm install success --global",
+                "Sviluppo interfacce moderne e scalabili."
+            ];
+            
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    terminalText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    terminalText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    typingSpeed = 2000; // Pausa alla fine della frase
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typingSpeed = 500;
+                }
+
+                setTimeout(type, typingSpeed);
+            }
+
+            // Avvia l'animazione dopo un breve ritardo
+            setTimeout(type, 1000);
+
+            // "Coming Soon" Typing Animation with Scroll Trigger
+            const comingSoonText = document.getElementById("coming-soon-text");
+
+const textOnly = "altri progetti in arrivo stay tuned..";
+const icons = `
+    <i class="fa-solid fa-rocket"></i>
+    <i class="fa-solid fa-code"></i>
+    <i class="fa-solid fa-mug-hot"></i>
+`;
+
+let csIndex = 0;
+let isAnimating = false;
+
+function typeComingSoon() {
+    if (csIndex < textOnly.length) {
+        comingSoonText.textContent += textOnly.charAt(csIndex);
+        csIndex++;
+        setTimeout(typeComingSoon, 70);
+    } else {
+        // 👇 aggiunge le icone SOLO alla fine
+        comingSoonText.innerHTML += icons;
+        isAnimating = false;
+    }
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !isAnimating) {
+            comingSoonText.textContent = "";
+            csIndex = 0;
+            isAnimating = true;
+            typeComingSoon();
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector(".projects-coming-soon"));
         </script>
     </body>
 </html>
